@@ -1,0 +1,13 @@
+/* Global Wrapper */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc; /* Subtle modern slate background */
+  color: #0f172a;
+}
+
+/* Page Transition Smoothness */
+.app > div {
+  width: 100%;
+}

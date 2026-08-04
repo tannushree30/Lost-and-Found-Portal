@@ -1,0 +1,118 @@
+/* ============ Item Details Page ============ */
+
+.details-container {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.details-card {
+  width: 100%;
+  max-width: 700px;
+
+  background: white;
+
+  border-radius: 18px;
+  padding: 35px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.details-card h1 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+  font-size: 38px;
+}
+
+.details-card p {
+  margin: 16px 0;
+  font-size: 17px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.details-card strong {
+  color: #111827;
+}
+
+/* ============ Status ============ */
+
+.status {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.lost {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.found {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.returned {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* ============ Back Button ============ */
+
+.back-btn {
+  margin-top: 30px;
+  width: 100%;
+
+  background: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ============ Loading ============ */
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 28px;
+  color: #6b7280;
+}
+
+/* ============ Responsive ============ */
+
+@media (max-width: 768px) {
+
+  .details-card {
+    padding: 25px;
+  }
+
+  .details-card h1 {
+    font-size: 30px;
+  }
+
+  .details-card p {
+    font-size: 16px;
+  }
+
+}
