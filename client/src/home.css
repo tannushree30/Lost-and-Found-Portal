@@ -1,21 +1,20 @@
-/* ============ Home Page ============ */
-
+/* Home page */
 .home-container {
   min-height: 100vh;
   background: #f5f7fb;
   padding: 40px 20px;
 }
 
+/* Page title */
 .home-title {
   text-align: center;
   font-size: 48px;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 35px;
+  margin: 0 0 35px;
 }
 
-/* ============ Search & Filter ============ */
-
+/* Search and filter controls */
 .controls {
   display: flex;
   justify-content: center;
@@ -33,6 +32,7 @@
   border-radius: 10px;
   outline: none;
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -47,52 +47,78 @@
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  background: #ffffff;
+  box-sizing: border-box;
 }
 
-/* ============ Cards ============ */
+.filter-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.15);
+}
 
+/* Items grid */
 .items-container {
-  max-width: 1000px;
-  margin: auto;
-
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 25px;
 }
 
+/* Item card */
 .item-card {
-  background: white;
-  border-radius: 15px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
   padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
 .item-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.11);
+}
+
+/* Item image */
+.item-image {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 18px;
+  display: block;
+  box-sizing: border-box;
 }
 
 .item-card h2 {
   color: #1f2937;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+  line-height: 1.3;
 }
 
 .item-card p {
   margin: 12px 0;
   color: #4b5563;
   line-height: 1.6;
+  font-size: 0.96rem;
 }
 
 .item-card strong {
   color: #111827;
+  font-weight: 600;
 }
 
-/* ============ Status ============ */
-
+/* Status */
 .status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 5px 14px;
   border-radius: 20px;
   font-size: 14px;
@@ -100,47 +126,44 @@
 }
 
 .lost {
-  background: #fee2e2;
+  background: #fef2f2;
   color: #dc2626;
+  border: 1px solid #fecaca;
 }
 
 .found {
-  background: #dcfce7;
+  background: #f0fdf4;
   color: #15803d;
+  border: 1px solid #bbf7d0;
 }
 
 .returned {
-  background: #dbeafe;
+  background: #eff6ff;
   color: #1d4ed8;
+  border: 1px solid #bfdbfe;
 }
 
-/* ============ View Details Button ============ */
-
+/* Details button */
 .details-btn {
   width: 100%;
   margin-top: 20px;
-
   padding: 12px;
-
   background: #2563eb;
-  color: white;
-
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-
+  border-radius: 9px;
   font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s ease;
 }
 
 .details-btn:hover {
   background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
-/* ============ Empty State ============ */
-
+/* Empty state */
 .no-items {
   text-align: center;
   margin-top: 60px;
@@ -148,15 +171,20 @@
   color: #6b7280;
 }
 
-/* ============ Responsive ============ */
-
+/* Responsive */
 @media (max-width: 768px) {
+  .home-container {
+    padding: 30px 15px;
+  }
+
   .home-title {
     font-size: 36px;
+    margin-bottom: 30px;
   }
 
   .controls {
     flex-direction: column;
+    gap: 14px;
   }
 
   .search-input,
@@ -167,5 +195,32 @@
 
   .items-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 25px 12px;
+  }
+
+  .home-title {
+    font-size: 30px;
+  }
+
+  .item-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .item-image {
+    height: 190px;
+  }
+
+  .item-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .item-card p {
+    font-size: 0.92rem;
   }
 }

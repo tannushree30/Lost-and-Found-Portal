@@ -1,62 +1,81 @@
-/* ============ My Items Page ============ */
-
+/* My Items page */
 .myitems-container {
   min-height: 100vh;
   background: #f5f7fb;
-  padding: 40px 20px;
+  padding: 45px 20px;
+  box-sizing: border-box;
 }
 
 .myitems-title {
   text-align: center;
   font-size: 42px;
   color: #1f2937;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
+  font-weight: 700;
 }
 
 .items-grid {
   max-width: 1100px;
-  margin: auto;
-
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 25px;
 }
 
-/* ============ Card ============ */
-
+/* Item card */
 .item-card {
-  background: white;
-  border-radius: 15px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
   padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
 .item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.11);
+}
+
+.item-image {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 18px;
+  display: block;
+  box-sizing: border-box;
 }
 
 .item-card h2 {
   text-align: center;
   color: #1f2937;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .item-card p {
   margin: 12px 0;
   color: #4b5563;
   line-height: 1.6;
+  font-size: 0.96rem;
 }
 
 .item-card strong {
   color: #111827;
+  font-weight: 600;
 }
 
-/* ============ Status ============ */
-
+/* Status */
 .status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 5px 14px;
   border-radius: 20px;
   font-size: 14px;
@@ -64,46 +83,52 @@
 }
 
 .lost {
-  background: #fee2e2;
+  background: #fef2f2;
   color: #dc2626;
+  border: 1px solid #fecaca;
 }
 
 .found {
-  background: #dcfce7;
+  background: #f0fdf4;
   color: #15803d;
+  border: 1px solid #bbf7d0;
 }
 
 .returned {
-  background: #dbeafe;
+  background: #eff6ff;
   color: #1d4ed8;
+  border: 1px solid #bfdbfe;
 }
 
-/* ============ Buttons ============ */
-
+/* Buttons */
 .button-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 26px;
 }
 
 .edit-btn,
 .delete-btn,
+.view-btn,
 .return-btn {
   flex: 1;
-  min-width: 100px;
-
-  padding: 12px;
-
+  min-width: 110px;
+  padding: 11px 13px;
   border: none;
-  border-radius: 8px;
-
-  color: white;
-  font-size: 15px;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 600;
-
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover,
+.view-btn:hover,
+.return-btn:hover {
+  transform: translateY(-1px);
 }
 
 .edit-btn {
@@ -122,6 +147,14 @@
   background: #dc2626;
 }
 
+.view-btn {
+  background: #6b7280;
+}
+
+.view-btn:hover {
+  background: #4b5563;
+}
+
 .return-btn {
   background: #10b981;
 }
@@ -130,8 +163,7 @@
   background: #059669;
 }
 
-/* ============ No Items ============ */
-
+/* Empty state */
 .no-items {
   text-align: center;
   font-size: 24px;
@@ -139,15 +171,20 @@
   margin-top: 60px;
 }
 
-/* ============ Responsive ============ */
-
+/* Responsive */
 @media (max-width: 768px) {
+  .myitems-container {
+    padding: 35px 15px;
+  }
+
   .myitems-title {
     font-size: 34px;
+    margin-bottom: 30px;
   }
 
   .items-grid {
     grid-template-columns: 1fr;
+    max-width: 600px;
   }
 
   .button-group {
@@ -156,7 +193,35 @@
 
   .edit-btn,
   .delete-btn,
+  .view-btn,
   .return-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .myitems-container {
+    padding: 25px 12px;
+  }
+
+  .myitems-title {
+    font-size: 30px;
+  }
+
+  .item-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .item-image {
+    height: 190px;
+  }
+
+  .item-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .item-card p {
+    font-size: 0.92rem;
   }
 }

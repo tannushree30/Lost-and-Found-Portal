@@ -33,6 +33,13 @@ const itemSchema = new mongoose.Schema(
       enum: ["Lost", "Found", "Returned"],
       required: true,
     },
+
+    previousStatus: {
+      type: String,
+      enum: ["Lost", "Found"],
+      default: null,
+    },
+
     image: {
       type: String,
       default: "",
