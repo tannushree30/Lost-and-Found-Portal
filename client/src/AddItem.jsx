@@ -1,5 +1,5 @@
 import { useState } from "react";
-import API from "./Services/api";
+import API from "./services/api";
 import "./AddItem.css";
 
 function AddItem() {
