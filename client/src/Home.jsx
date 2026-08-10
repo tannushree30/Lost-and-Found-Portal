@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "./Services/api";
-import "./Home.css";
+import "./home.css";
 
 function Home() {
   const navigate = useNavigate();
