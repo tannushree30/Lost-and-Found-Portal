@@ -1,46 +1,58 @@
 # 🔎 Lost & Found Portal
 
-> A full-stack web application designed to make reporting, discovering, and managing lost & found items simple and efficient.
-
-<p align="center">
-  <b>Find it. Report it. Return it.</b>
-</p>
+> A full-stack web application that provides a centralized platform for reporting, discovering, and managing lost & found items.
 
 ---
 
-## 🚀 About The Project
+## 🚀 Live Demo
 
-Lost & Found Portal is a full-stack web application that provides a centralized platform where users can report lost items, post found items, browse listings, and manage their submissions.
+🌐 **Live Website:**  
+https://lost-and-found-portal-5erb.onrender.com
 
-The project combines a modern React frontend with a Node.js/Express backend and MongoDB database to provide a smooth and scalable experience.
+---
+
+## 📌 About The Project
+
+Lost & Found Portal is a full-stack web application designed to make the process of reporting and finding lost items easier and more organized.
+
+Users can register and log in, report lost or found items, upload images, browse available listings, and manage their own submissions.
+
+The application uses a React-based frontend, Node.js and Express for the backend, and MongoDB for data storage.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **User Authentication**  
-  Secure user registration and login functionality.
+- 🔐 **User Authentication**
+  - User registration
+  - Secure login
+  - Protected routes
 
-- 📌 **Report Lost Items**  
-  Users can create detailed listings for items they have lost.
+- 📌 **Report Lost Items**
+  - Add details about lost items
+  - Add location, category, date, description, and contact information
+  - Upload item images
 
-- 📦 **Report Found Items**  
-  Found items can be uploaded with relevant details and images.
+- 📦 **Report Found Items**
+  - Create listings for found items
+  - Add relevant item details and images
 
-- ✏️ **Edit & Manage Listings**  
-  Users can update or manage their previously submitted items.
+- 🔍 **Browse & Discover**
+  - Explore lost and found listings
+  - View detailed information about items
 
-- 🔍 **Search & Browse**  
-  Easily explore available lost and found item listings.
+- ✏️ **Manage Listings**
+  - Edit submitted items
+  - Manage personal listings
 
-- 🖼️ **Image Uploads**  
-  Upload item images using Cloudinary.
+- 🖼️ **Image Uploads**
+  - Item images are uploaded and managed using Cloudinary
 
-- 🤖 **AI-Based Functionality**  
-  AI-powered features to improve item discovery and matching.
+- 🤖 **AI-Powered Functionality**
+  - AI functionality to assist with item-related discovery and matching
 
-- 📱 **Responsive UI**  
-  Designed to work across different screen sizes.
+- 📱 **Responsive Interface**
+  - User-friendly interface designed for different screen sizes
 
 ---
 
@@ -48,21 +60,29 @@ The project combines a modern React frontend with a Node.js/Express backend and 
 
 ### Frontend
 
-![React](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ⚛️ React.js
+- ⚡ Vite
+- 🎨 CSS
+- 🌐 JavaScript
 
 ### Backend
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+- 🟢 Node.js
+- 🚂 Express.js
+- 🔐 JWT Authentication
+- 📡 REST APIs
 
-### Tools & Services
+### Database & Services
 
-![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+- 🍃 MongoDB
+- ☁️ Cloudinary
+- 🤖 AI API
+
+### Deployment & Tools
+
+- 🚀 Render
+- 🐙 Git & GitHub
+- 💻 VS Code
 
 ---
 
@@ -71,15 +91,32 @@ The project combines a modern React frontend with a Node.js/Express backend and 
 ```text
 Lost-and-Found-Portal/
 │
-├── client/                  # React frontend
+├── client/                       # React frontend
 │   ├── public/
-│   └── src/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── services/
+│   │   ├── AddItem.jsx
+│   │   ├── EditItem.jsx
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── MyItems.jsx
+│   │   ├── ItemDetails.jsx
+│   │   ├── ForgotPassword.jsx
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
 │
-├── server/                  # Node.js + Express backend
+├── server/                       # Node.js + Express backend
 │   ├── config/
 │   ├── controllers/
 │   ├── middleware/
 │   ├── models/
-│   └── routes/
+│   ├── routes/
+│   ├── .env
+│   ├── server.js
+│   └── package.json
 │
 └── README.md
