@@ -8,6 +8,7 @@ import Login from "./Login";
 import Register from "./Register";
 import AddItem from "./AddItem";
 import MyItems from "./MyItems";
+import Profile from "./Profile";
 import EditItem from "./EditItem";
 import ItemDetails from "./ItemDetails";
 import ProtectedRoute from "./ProtectedRoute";
@@ -47,6 +48,15 @@ function App() {
           element={
             <ProtectedRoute>
               <MyItems />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />
