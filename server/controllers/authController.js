@@ -5,7 +5,20 @@ const bcrypt = require("bcrypt");
 // Register User
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, password } = req.body;
+    const email = String(req.body.email || "").trim().toLowerCase();
+
+    // Allow only IGDTUW email addresses
+    if (
+      !/^[a-z0-9._%+-]+@igdtuw\.ac\.in$/i.test(
+        String(email || "").trim()
+      )
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Only official IGDTUW email addresses (@igdtuw.ac.in) are allowed.",
+      });
+    }
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });

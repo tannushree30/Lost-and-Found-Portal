@@ -5,7 +5,6 @@ import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
-
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -22,8 +21,18 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const email = form.email.trim().toLowerCase();
+
+    if (!email.endsWith("@igdtuw.ac.in")) {
+      alert("Please use your official IGDTUW email address.");
+      return;
+    }
+
     try {
-      const res = await API.post("/auth/register", form);
+      const res = await API.post("/auth/register", {
+        ...form, 
+        email,
+      });
 
       // Save token in localStorage
       localStorage.setItem("token", res.data.token);
@@ -70,9 +79,11 @@ function Register() {
             className="register-input"
             type="email"
             name="email"
-            placeholder="Enter Email"
+            placeholder="Enter your IGDTUW Email"
             value={form.email}
             onChange={handleChange}
+            pattern="[a-zA-Z0-9._%+-]+@igdtuw\.ac\.in"
+            title="Please use your official IGDTUW email address (@igdtuw.ac.in)"
             required
           />
 
