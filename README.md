@@ -11,78 +11,94 @@ https://lost-and-found-portal-5erb.onrender.com
 
 ---
 
-## 📌 About The Project
 
-Lost & Found Portal is a full-stack web application designed to make the process of reporting and finding lost items easier and more organized.
+## 📌 About the Project
 
-Users can register and log in, report lost or found items, upload images, browse available listings, and manage their own submissions.
+Lost & Found Portal is designed to make finding lost belongings and reporting found items easier, faster, and more organized.
 
-The application uses a React-based frontend, Node.js and Express for the backend, and MongoDB for data storage.
+Users can create accounts, report lost or found items, upload item images, browse listings, manage their submissions, and use AI-powered functionality to assist with item discovery and matching.
+
+The application also includes a personal profile section where authenticated users can view their registered details and update their phone number.
+
+The project is built using React.js, Node.js, Express.js, and MongoDB.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **User Authentication**
-  - User registration
-  - Secure login
-  - Protected routes
+### 🔐 User Authentication
+- User registration and login
+- JWT-based authentication
+- Protected routes for authenticated users
+- Registration restricted to official IGDTUW email addresses (`@igdtuw.ac.in`)
+- Forgot-password functionality
 
-- 📌 **Report Lost Items**
-  - Add details about lost items
-  - Add location, category, date, description, and contact information
-  - Upload item images
+### 📌 Lost & Found Listings
+- Report lost items with relevant details
+- Report found items
+- Add item title, description, category, location, date, and contact information
+- Upload item images
+- Browse available listings
+- View detailed information about individual items
 
-- 📦 **Report Found Items**
-  - Create listings for found items
-  - Add relevant item details and images
+### 📦 My Items
+- View your own submitted listings
+- Manage your item submissions
+- Edit item details
 
-- 🔍 **Browse & Discover**
-  - Explore lost and found listings
-  - View detailed information about items
+### 👤 My Profile
+- View registered name and college email
+- Keep name and email read-only
+- Edit your phone number using the Edit Phone Number option
+- Save phone number changes to MongoDB
+- Display a success popup after a successful update
+- Access the profile page through a protected route
 
-- ✏️ **Manage Listings**
-  - Edit submitted items
-  - Manage personal listings
+### 🤖 AI-Powered Item Discovery
+- AI-assisted image analysis
+- Extract relevant item attributes
+- Suggest potentially matching lost and found items
 
-- 🖼️ **Image Uploads**
-  - Item images are uploaded and managed using Cloudinary
+### 🖼️ Image Uploads
+- Upload item images
+- Store and manage images using Cloudinary
 
-- 🤖 **AI-Powered Functionality**
-  - AI functionality to assist with item-related discovery and matching
-
-- 📱 **Responsive Interface**
-  - User-friendly interface designed for different screen sizes
+### 📱 Responsive Interface
+- Clean and user-friendly interface
+- Responsive profile form and navigation
+- Designed for desktop and mobile screens
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-
-- ⚛️ React.js
-- ⚡ Vite
-- 🎨 CSS
-- 🌐 JavaScript
+- React.js
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- Axios
+- React Router
 
 ### Backend
+- Node.js
+- Express.js
+- REST APIs
+- JSON Web Tokens (JWT)
+- bcrypt
 
-- 🟢 Node.js
-- 🚂 Express.js
-- 🔐 JWT Authentication
-- 📡 REST APIs
+### Database and Services
+- MongoDB
+- Mongoose
+- Cloudinary
+- Google Gemini API for AI functionality
 
-### Database & Services
-
-- 🍃 MongoDB
-- ☁️ Cloudinary
-- 🤖 AI API
-
-### Deployment & Tools
-
-- 🚀 Render
-- 🐙 Git & GitHub
-- 💻 VS Code
+### Development and Deployment
+- Git
+- GitHub
+- VS Code
+- Render
 
 ---
 
@@ -91,32 +107,52 @@ The application uses a React-based frontend, Node.js and Express for the backend
 ```text
 Lost-and-Found-Portal/
 │
-├── client/                       # React frontend
+├── client/
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── services/
-│   │   ├── AddItem.jsx
-│   │   ├── EditItem.jsx
+│   │   │   └── api.js
+│   │   ├── App.jsx
+│   │   ├── Navbar.jsx
 │   │   ├── Home.jsx
 │   │   ├── Login.jsx
 │   │   ├── Register.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Profile.css
+│   │   ├── AddItem.jsx
 │   │   ├── MyItems.jsx
+│   │   ├── EditItem.jsx
 │   │   ├── ItemDetails.jsx
-│   │   ├── ForgotPassword.jsx
-│   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── package.json
 │   └── vite.config.js
 │
-├── server/                       # Node.js + Express backend
+├── server/
 │   ├── config/
 │   ├── controllers/
+│   │   └── authController.js
 │   ├── middleware/
+│   │   └── authMiddleware.js
 │   ├── models/
+│   │   └── User.js
 │   ├── routes/
-│   ├── .env
+│   │   └── authRoutes.js
 │   ├── server.js
 │   └── package.json
 │
 └── README.md
+```
+
+---
+
+## 🔮 Future Improvements
+
+- Improved item-matching accuracy
+- Notifications for potential item matches
+- Enhanced search and filtering
+- Additional account-management features
+- More detailed item-status tracking
+- Further accessibility and mobile usability improvements
+
+---
